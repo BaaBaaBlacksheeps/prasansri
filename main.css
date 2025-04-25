@@ -1,0 +1,309 @@
+@font-face {
+  font-family: "EverythingFont";
+  src: url("montserrat.ttf") format("truetype");
+}
+
+* {
+  font-family: "EverythingFont", sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+  --table-border-color: #776a617e;
+}
+
+html {
+  background: #fdf6e3 url("background.png");
+  background-size: contain;
+  background-repeat: repeat;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  padding: 48px 48px 0 48px;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 3rem;
+  margin: 0;
+}
+
+section.hero-section {
+  background: url("hero.png");
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  align-items: center;
+  height: 400px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h2 span {
+  font-size: 1.4rem;
+  line-height: 110%;
+  margin-left: 0.25rem;
+}
+
+h2 {
+  font-size: 4rem;
+  line-height: 95%;
+  margin: 0;
+}
+
+.lhs {
+  max-width: 300px;
+}
+
+.lhs p {
+  margin-left: 0.25rem;
+}
+
+.rhs {
+  padding: 6rem 3rem;
+  border: 2px solid rgba(0, 0, 0, 0.438);
+  border-radius: 3rem;
+  background-color: #e8d5c7b0;
+  z-index: -1;
+}
+
+.rhs .first {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.rhs .second {
+  margin-top: 4px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.rhs span.small {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.rhs span.city {
+  font-size: 2.5rem;
+}
+
+.rhs p {
+  margin: 0;
+}
+
+/* second section */
+
+.charges-and-contacts {
+  padding: 128px 0;
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.charges table {
+  border-spacing: 0;
+  border: 2px solid var(--table-border-color);
+  border-radius: 0.7rem;
+  font-weight: 420;
+}
+
+.charges table th {
+  padding: 0.4rem 1.5rem;
+  border-bottom: 2px solid var(--table-border-color);
+}
+
+.charges table td {
+  padding: 1rem 1.75rem;
+}
+
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 0.7rem;
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 0.7rem;
+}
+
+table tr:first-child th:first-child {
+  border-top-left-radius: 0.7rem;
+}
+
+table tr:first-child th:last-child {
+  border-top-right-radius: 0.7rem;
+}
+
+.charges img {
+  width: 1.3rem;
+  vertical-align: middle;
+  height: 1.3rem;
+}
+
+.call-ahead {
+  margin-top: 2rem;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.call-ahead p {
+  margin: 0.4rem;
+}
+
+.contacts {
+  background-color: #e8d5c7b0;
+  padding: 16px 24px;
+  font-weight: 500;
+  box-shadow: 1px 1px 20px 4px #f7eee8;
+  border: 1px solid black;
+}
+
+.contacts p {
+  font-size: 14px;
+}
+
+.contacts ul {
+  padding-left: 16px;
+}
+
+.contacts a {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: black;
+}
+
+.registered-address {
+  font-size: 14px;
+  margin-top: 32px;
+}
+
+.registered-address pre {
+  margin: 0;
+  line-height: 130%;
+}
+
+.registered-address h3 {
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+/* footer */
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 16px;
+  font-size: 13px;
+  padding: 16px;
+  font-weight: 500;
+  color: white;
+  background-color: #80502fb0;
+}
+
+footer p {
+  margin: 0;
+}
+
+.img {
+  display: none;
+  width: 100%;
+  margin: 24px 0;
+}
+
+.img-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  :root {
+    font-size: 15px;
+  }
+  section.hero-section {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    font-size: 14px;
+  }
+  section.hero-section {
+    background-image: none;
+    height: fit-content;
+    row-gap: 48px;
+    margin-top: 48px;
+  }
+  .charges-and-contacts {
+    flex-direction: column;
+    width: max-content;
+    margin: 0 auto;
+    row-gap: 48px;
+    padding: 48px;
+  }
+  .img {
+    display: block;
+  }
+  .img-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  :root {
+    font-size: 12px;
+  }
+  .lhs p {
+    font-size: 14px;
+  }
+  section.hero-section {
+    flex-direction: column;
+  }
+  .img {
+    display: none;
+  }
+  .img-mobile {
+    display: block;
+  }
+  .charges-and-contacts {
+    padding: 48px 0;
+    width: 100%;
+    max-width: 400px;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .body {
+    padding: 48px 24px;
+  }
+  .rhs {
+    scale: 90%;
+  }
+  table {
+    width: 100%;
+  }
+  .charges table td {
+    padding-left: 1rem;  
+    padding-right: 1rem;
+  }
+  .img-mobile {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .rhs {
+    scale: 80%;
+  }
+}
