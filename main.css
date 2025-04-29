@@ -28,6 +28,24 @@ body {
   padding: 48px 48px 0 48px;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.ganesh {
+  width: 60px;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+}
+
+.dummy {
+  visibility: hidden;
+}
+
 h1 {
   font-weight: 800;
   font-size: 3rem;
@@ -82,7 +100,7 @@ h2 {
 
 .rhs .second {
   margin-top: 4px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 800;
 }
 
@@ -92,7 +110,7 @@ h2 {
 }
 
 .rhs span.city {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
 }
 
 .rhs p {
@@ -113,7 +131,6 @@ h2 {
   border-spacing: 0;
   border: 2px solid var(--table-border-color);
   border-radius: 0.7rem;
-  font-weight: 420;
 }
 
 .charges table th {
@@ -150,7 +167,6 @@ table tr:first-child th:last-child {
 .call-ahead {
   margin-top: 2rem;
   font-size: 14px;
-  font-weight: 500;
 }
 
 .call-ahead p {
@@ -158,14 +174,12 @@ table tr:first-child th:last-child {
 }
 
 .contacts {
-  background-color: #e8d5c7b0;
+  background-color: #fff0e5b0;
   padding: 16px 24px;
-  font-weight: 500;
   box-shadow: 1px 1px 20px 4px #f7eee8;
-  border: 1px solid black;
 }
 
-.contacts p {
+.contacts * {
   font-size: 14px;
 }
 
@@ -184,14 +198,18 @@ table tr:first-child th:last-child {
   margin-top: 32px;
 }
 
-.registered-address pre {
-  margin: 0;
-  line-height: 130%;
+.registered-address h3 {
+  color: rgb(82, 81, 81);
+  font-size: 13px;
+  margin-bottom: 8px;
+  width: max-content;
 }
 
-.registered-address h3 {
-  font-size: 13px;
-  margin: 4px 0;
+.registered-address pre {
+  margin: 0;
+  width: max-content;
+  font-weight: normal;
+  line-height: 130%;
 }
 
 /* footer */
@@ -222,12 +240,109 @@ footer p {
   display: none;
 }
 
+/** tabs */
+
+.tabbed-section {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border-radius: 16px;
+  width: max-content;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  background-color: #ffe7d6b0;
+  font-weight: 600;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #da9665ad;
+}
+
+/* Create an active/current tablink class */
+.tab button[none="false"] {
+  background-color: #da9665ad;
+  color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+  margin-top: 8px;
+  display: none;
+  font-size: 14px;
+}
+
+.tabcontent[none="false"] {
+  display: block;
+}
+
+.tabcontent ul {
+  padding-left: 24px;
+}
+
+.tabcontent li {
+  margin-bottom: 8px;
+}
+
+section.driver {
+  width: 100%;
+  max-width: 800px;
+  background-color: #ffe7d6b0;
+  overflow: hidden;
+  margin: 0 auto 64px auto;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  padding: 8px;
+}
+
+section.driver img {
+  border-radius: 50%;
+  width: 40px;
+  aspect-ratio: 1 / 1;
+  background-color: green;
+}
+
 @media screen and (max-width: 1200px) {
   :root {
     font-size: 15px;
   }
   section.hero-section {
     height: 300px;
+  }
+  .charges-and-contacts {
+    flex-direction: column;
+    width: max-content;
+    margin: 0 auto;
+    row-gap: 48px;
+    padding: 48px;
+  }
+  .charges-and-contacts > * {
+    width: min(max-content, 100%);
+    margin: 0 auto;
+  }
+  .registered-address {
+    width: min(max-content, 100%);
+    margin: 32px auto 0 auto;
   }
 }
 
@@ -241,13 +356,7 @@ footer p {
     row-gap: 48px;
     margin-top: 48px;
   }
-  .charges-and-contacts {
-    flex-direction: column;
-    width: max-content;
-    margin: 0 auto;
-    row-gap: 48px;
-    padding: 48px;
-  }
+
   .img {
     display: block;
   }
@@ -265,6 +374,9 @@ footer p {
   }
   section.hero-section {
     flex-direction: column;
+  }
+  .dummy {
+    display: none;
   }
   .img {
     display: none;
@@ -285,25 +397,31 @@ footer p {
 
 @media screen and (max-width: 500px) {
   .body {
-    padding: 48px 24px;
+    padding: 48px 16px;
   }
   .rhs {
     scale: 90%;
   }
-  table {
-    width: 100%;
-  }
+
   .charges table td {
-    padding-left: 1rem;  
+    padding-left: 1rem;
     padding-right: 1rem;
   }
   .img-mobile {
     margin: 0;
+  }
+  section.driver {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
   }
 }
 
 @media screen and (max-width: 300px) {
   .rhs {
     scale: 80%;
+  }
+  table {
+    width: 100%;
   }
 }
