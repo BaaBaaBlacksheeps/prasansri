@@ -52,6 +52,10 @@ h1 {
   margin: 0;
 }
 
+a {
+  color: black;
+}
+
 section.hero-section {
   background: url("hero.png");
   background-size: contain;
@@ -190,7 +194,6 @@ table tr:first-child th:last-child {
 .contacts a {
   display: inline-block;
   margin-bottom: 8px;
-  color: black;
 }
 
 .registered-address {
