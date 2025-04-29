@@ -337,12 +337,17 @@ section.driver img {
     padding: 48px;
   }
   .charges-and-contacts > * {
-    width: min(max-content, 100%);
+    width: max-content;
+    max-width: 100%;
     margin: 0 auto;
   }
   .registered-address {
-    width: min(max-content, 100%);
+    width: max-content;
+    max-width: 100%;
     margin: 32px auto 0 auto;
+  }
+  .charges table {
+    margin: 0 auto;
   }
 }
 
