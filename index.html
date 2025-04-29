@@ -10,46 +10,81 @@
     <div class="body">
       <nav>
         <h1>PraSanSri</h1>
+        <img src="ganesh.png" class="ganesh" />
+        <h1 class="dummy">PraSanSri</h1>
       </nav>
       <section class="hero-section">
         <div class="lhs">
-          <h2><span>Hire car</span><br />For<br />RENT</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            hendrerit vestibulum tellus id venenatis.
-          </p>
+          <h2><span>Hire a car</span><br />On<br />RENT</h2>
+          <p>Here are your cool option for your twin city rides</p>
         </div>
-      <img class="img img-mobile"  src="hero.png"/>
+        <img class="img img-mobile" src="/hero.png" />
         <div class="rhs">
-          <p class="first">Available on</p>
+          <p class="first">Available in</p>
           <p class="second">
-            Saturdays & <br />Sundays <span class="small">in</span> <br /><span
-              class="city"
-              >Hyderabad</span
-            >
+            Twin Cities <span class="small">of</span><br />
+            <span class="city">Hyderabad</span><br />&
+            <span class="city">Sec'bad</span>
           </p>
         </div>
       </section>
-      <img class="img"  src="hero.png"/>
+      <img class="img" src="/hero.png" />
       <section class="charges-and-contacts">
+        <div class="tabbed-section">
+          <div class="tab">
+            <button
+              class="tablinks"
+              onclick="open_ride_type(event, 'Rentals')"
+              none="false"
+            >
+              Rentals
+            </button>
+            <button
+              class="tablinks"
+              onclick="open_ride_type(event, 'TripHrs')"
+              none="true"
+            >
+              Hire for a Trip
+            </button>
+            <!-- <button class="tablinks" onclick="open_ride_type(event, 'Airport')">
+              Airport
+            </button> -->
+          </div>
+          <div id="Rentals" class="tabcontent" none="false">
+            <ul>
+              <li>Daily</li>
+              <li>Weekly</li>
+              <li>Monthly</li>
+            </ul>
+          </div>
+          <div id="TripHrs" class="tabcontent" none="true">
+            <ul>
+              <li>Immediately upto 30 mins before start</li>
+              <li>Schedule your Trip</li>
+            </ul>
+          </div>
+          <!-- <div id="Airport" class="tabcontent">
+            <p>Tokyo is the capital of Japan.</p>
+          </div> -->
+        </div>
         <div class="charges">
           <table>
             <thead>
               <th><img src="car.png" /></th>
               <th><img src="passengers.png" /></th>
-              <th><img src="rupee.png" /></th>
+              <!-- <th><img src="rupee.png" /></th> -->
             </thead>
             <tbody>
               <tr>
                 <td>Ertiga AC</td>
                 <td>6+1 Seat</td>
-                <td>₹ 300 hourly</td>
+                <!-- <td>₹ 300 hourly</td> -->
               </tr>
             </tbody>
           </table>
           <div class="call-ahead">
+            <p>* Available between 6 AM to 6 PM</p>
             <p>* Please call ahead to confirm availability</p>
-            <p>* Available on weekends only</p>
             <p>* Local bookings (intra-city) only</p>
           </div>
         </div>
@@ -58,11 +93,12 @@
             <p><i>For bookings</i>, Whatsapp on following numbers</p>
             <ul>
               <li>
+                Sridharnath Tuma
                 <a href="https://wa.me/919177401818?text=I want to book the cab"
-                  >Sridharnath Tuma +919177401818</a
+                  >( +91 ) 9177401818</a
                 >
               </li>
-              <li>Sangeetha Tuma</li>
+              <li>Sangeetha Tuma ( +91 ) 6302171069</li>
             </ul>
           </div>
           <div class="registered-address">
@@ -77,11 +113,31 @@ Hyderabad Telangana India</pre
           </div>
         </div>
       </section>
+      <section class="driver">
+        <img src="driver.png"/>
+        <div>
+          <p>Aspiring drivers please register <a href="https://wa.me/919177401818?text=I want to apply for a driver job%0Amy name:">here</a></p>
+          <p>Send pan card, drivers license, police verification in the whatsapp chat</p>
+        </div>
+      </section>
     </div>
     <footer>
       <p>Powered by PraSanSri</p>
       <p>Copyright @ 2025</p>
       <p>All Rights Reserved</p>
     </footer>
+    <script>
+      function open_ride_type(evt, ride_type) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++)
+          tabcontent[i].setAttribute("none", true);
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++)
+          tablinks[i].setAttribute("none", true);
+        document.getElementById(ride_type).setAttribute("none", false);
+        evt.currentTarget.setAttribute("none", false);
+      }
+    </script>
   </body>
 </html>
